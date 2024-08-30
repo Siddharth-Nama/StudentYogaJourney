@@ -1,0 +1,451 @@
+/* Resetting default margin and padding */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.nav-list > li {
+    margin: 0 10px;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+.search-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+.form-inline {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-item {
+    text-align: center;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #333;
+    padding: 0px 15px;
+}
+.nav-item a:hover {
+    transform: scale(1.023);
+}
+
+.nav-item a:hover {
+    color: #007bff;
+}
+
+.logout {
+    margin-right: 10px;
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .logo, .search-container, .nav-item {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .search-container {
+        justify-content: flex-start;
+    }
+    .nav-item {
+        text-align: left;
+    }
+
+    .logout {
+        margin-right: 0;
+    }
+}
+
+/* Main styles */
+main {
+    padding: 20px;
+}
+
+.exercise {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.exercise p {
+    color: #666;
+}
+
+footer:hover{
+    transform: scale(1.023);
+}
+/* Footer styles */
+footer {
+    background-color: #ffffff;  /* Dark background color */
+    color: #27c9de;  /* White text color */
+    text-align: center;  /* Center-align the text */
+    padding: 10px 0;  /* Add padding for vertical space */
+    width: 100%;  /* Make footer span full width */
+    position: fixed;  /* Fix the footer at the bottom */
+    bottom: 0;  /* Position it at the bottom */
+    left: 0;  /* Align to the left edge */
+    right: 0;  /* Align to the right edge */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);  /* Add subtle shadow to match header */
+    z-index: 1000;  /* Ensure it stays above other elements */
+}
+
+
+.form {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.other {
+    margin-left: 100px;
+}
+
+h3 {
+    /* background-color: #f9f9f9; */
+    margin-bottom: 20px;
+    font-size: 25px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+h3:hover , h4:hover{
+    transform: scale(1.01);
+}
+p,span {
+    /* background-color: #ffffff; */
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #000000;
+    font-family: Arial, sans-serif;
+}
+
+.image-link {
+    display: inline-block;
+    width: 32%;
+    margin: 0 5px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.image-style {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.p-image{
+    display: inline-block;
+    width: 32%; 
+    margin: 0 5px; 
+    border: 2px solid white; 
+    text-align: center;
+}
+.p-image:hover{
+    transform: scale(1.1);
+}
+h4 {
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    font-size: 25px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+/* Resetting default margin and padding */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap");
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+/* Header Styling */
+header {
+    background-color: #1d33bd; /* Light background color */
+    box-shadow: 0 4px 6px rgb(0, 0, 0); /* Subtle shadow */
+    position:static;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.nav-list > li {
+    margin: 0 10px;
+}
+
+
+.logo {
+    flex: 1;
+}
+
+.logo-img {
+    height: 50px;
+    border-radius: 10px;
+}
+
+.search-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.form-control {
+    flex: 1;
+    margin-right: 10px;
+    border: 1px solid #8adef3;
+    width: 100%; /* Adjust width as needed */
+    padding: 8px 5px;
+    font-size: 1rem;
+    line-height: 1.0;
+    border-radius: 0.25rem;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: #53e092;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #80da94;
+}
+
+.nav-item {
+    text-align: center;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+}
+
+.nav-item a:hover {
+    transform: scale(1.023);
+    color: #007bff;
+}
+
+.logout {
+    margin-right: 10px;
+}
+
+.hero_bg_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .hero_bg_box{
+    min-width: 100%;
+    min-height: 100%;
+    
+  }
+  
+  .hero_bg_box img {
+    min-width: 100%;
+    min-height: 100%;
+    
+  }
+  
+  .hero_bg_box {
+    display: none;
+  }
+  
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .logo, .search-container, .nav-item {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .search-container {
+        justify-content: flex-start;
+    }
+
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-control {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .nav-item {
+        text-align: left;
+    }
+
+    .logout {
+        margin-right: 0; /* No need for margin-right on mobile */
+    }
+}
+
+/* Main styles */
+main {
+    padding: 20px;
+}
+
+.exercise {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+   
+}
+
+.exercise h3 {
+    margin-bottom: 5px;
+}
+
+.exercise p {
+    color: #ffffff;
+}
+/* Styling the button */
+.btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+/* Styling the search button specifically */
+.btn-outline-success {
+    color: #ffffff;
+    border-color: #06160a;
+}
+
+
+.form{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.image-container {
+    text-align: center; /* Align the images horizontally */
+    transition: transform 0.3s, background-color 0.3s; /* add transition effect */
+    /* background-color: hsl(0, 0%, 100%); initial background color */
+    /* border: 1px solid #ffffff; add a border */
+}

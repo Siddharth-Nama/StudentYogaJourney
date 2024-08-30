@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .mb-3 {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .btn {
+            width: 100%;
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .custom-alert {
+            background-color: #033060; /* Dark blue background color */
+            color: #ffffff; /* Text color */
+            border-color: #004eab; /* Border color */
+            border-radius: 0.25rem; /* Border radius */
+            padding: 5px; /* Padding */
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="/register/">
+    {% csrf_token %}
+    <h3>Register</h3>
+    {% if messages %}
+    <div class="alert alert-primary custom-alert" role="alert">
+        {% for message in messages %} {{ message }} {% endfor %}
+    </div>
+    {% endif %}
+    <div class="mb-3">
+        <label for="first_name" class="first_name">First Name</label>
+        <input
+                type="text"
+                class="first_name"
+                id="first_name"
+                placeholder="Enter your first name"
+                name="first_name"
+                required
+        />
+    </div>
+    <div class="mb-3">
+        <label for="last_name" class="last_name">Last Name</label>
+        <input
+                type="text"
+                class="last_name"
+                id="last_name"
+                placeholder="Enter your last name"
+                name="last_name"
+                required
+        />
+    </div>
+    <div class="mb-3">
+        <label for="username" class="username">Username</label>
+        <input
+                type="text"
+                class="username"
+                id="username"
+                placeholder="Enter your username"
+                name="username"
+                required
+        />
+    </div>
+    <div class="mb-3">
+        <label for="password" class="password">Password</label>
+        <input
+                type="password"
+                class="password"
+                id="password"
+                placeholder="Enter your password"
+                name="password"
+                required
+        />
+    </div>
+    <p>Already have an account? <a href="/login/">Login</a></p>
+    <button type="submit" class="btn" name="submit">Submit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+</head>
+<body>
+    <div class="profile-container">
+        <h1 style="text-align: left;"> <a href="/">🏠</a> &emsp;&emsp;&emsp;&emsp; {{ custom_user.user.first_name }}'s Profile</h1>  <!-- Update to access the first name of the related user -->
+        <hr>
+        <div class="profile-details">
+            <div class="profile-image">
+                {% if custom_user.image %}
+                    <img src="{{ custom_user.image.url }}" alt="Profile Image">
+                {% else %}
+                    <img src="https://www.disneyplusinformer.com/wp-content/uploads/2021/06/Luca-Profile-Avatars-3.png" alt="Default Profile Image">
+                {% endif %}
+            </div>
+            <div class="profile-info">
+                <p><strong>Username:</strong> {{ custom_user.user.username }} &emsp;&emsp;&emsp;&emsp; <a href="/rename" style="text-decoration: none;">✏️</a>
+                </p> 
+                <p><strong>Full Name:</strong> {{ custom_user.user.first_name }} {{ custom_user.user.last_name }} </p> 
+                {% if custom_user.email != 'example2003@gmail.com' %}
+                <p><strong>Email:</strong> {{ custom_user.email }}</p>
+                {% else %}
+                <p><strong>Email:</strong> example@gmail.com</p>
+                {% endif %}
+                {% if custom_user.phone != '+91987654321' %}
+                <p><strong>Phone:</strong> {{ custom_user.phone }}</p>
+                {% else %}
+                <p><strong>Phone:</strong> +91987654321</p>
+                {% endif %}
+                {% if custom_user.dob != '2003-04-26' %}
+                <p><strong>Date of Birth:</strong> {{ custom_user.dob }}</p> <!-- Change to access Date of Birth field -->
+                {% else %}
+                <p><strong>Date of Birth:</strong> 26-04-2004</p> <!-- Change to access Date of Birth field -->
+                {% endif %}
+                <br>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

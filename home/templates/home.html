@@ -1,0 +1,367 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga and Exercise for Students</title>
+    <link rel="stylesheet" href="{% static 'home/home.css' %}"></head>
+    {% load static %}
+<body>
+    {% csrf_token %}
+    <header>
+        
+        <nav>
+            <ul>
+                <a href="/"><img src="{% static 'home/image/logo.jpeg' %}" alt="sidd"   style="height: 50px;"></a>
+                <div class="container">
+                    <form class="form-inline" style="margin: 5px;" method="GET" action="{% url 'exercise_search' %}">
+                        <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search Exercise" aria-label="Search" style="width: 500px;">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+            
+                    
+                </div>
+                <li style="margin-left: 180px;"><a href="/">Home</a></li>
+                <li><a href="https://iiitbh.ac.in/">College Corner</a></li>
+                <li><a href="https://yogawithadriene.com/free-yoga-videos/">Exercises</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section style="margin-bottom: 10px;" id="welcome">
+            <h2>Welcome, {{ custom_user.user.first_name }}</h2>
+            <p style="margin-bottom: 5px;" >Start your fitness journey with our collection of yoga poses and exercises.</p>
+            <hr>
+        </section>
+        <section>
+            {% if results %}
+                <h2>Results:</h2>
+                <ul>
+                    {% for exercis in results %}
+                        <li>{{exercis.exercisetype}} -> {{ exercis.exercisename }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                {% if query %}
+                    <p>No exercises found.</p>
+                {% endif %}
+            {% endif %}
+        </section>
+         <h3>➤ Creating a Yoga Routine</h3>
+        <h4 style="margin-bottom: 10px;">1. Basic Routine</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+                {% if forloop.counter <= 3 %}
+                    <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                        <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="exercise image">
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="link-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 3 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <h4 style="margin-bottom: 10px;">2. Intermediate Routine</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 6 and forloop.counter >= 4 %}
+            <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="afforde">
+            </a>
+              {% endif %}
+            {% endfor %}
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 6 and forloop.counter >= 4 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+               {% endif %}
+            {% endfor %}
+           
+        </div>
+
+        <h4 style="margin-bottom: 10px;">3. Advanced Routine</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 9 and forloop.counter >= 7 %}
+            <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="afforde">
+            </a>
+              {% endif %}
+            {% endfor %}
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 9 and forloop.counter >= 7 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+               {% endif %}
+            {% endfor %}
+           
+        </div>
+
+
+
+        <h3>➤ Yoga Exercises</h3>
+        <h4 style="margin-bottom: 10px;">1. Basic Poses</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 12 and forloop.counter >= 10 %}
+            <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="afforde">
+            </a>
+              {% endif %}
+            {% endfor %}
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 12 and forloop.counter >= 10 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+               {% endif %}
+            {% endfor %}
+           
+        </div>
+
+        <h4 style="margin-bottom: 10px;">2. Intermediate Poses</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 15 and forloop.counter >= 13 %}
+            <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="afforde">
+            </a>
+              {% endif %}
+            {% endfor %}
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 15 and forloop.counter >= 13 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+               {% endif %}
+            {% endfor %}
+           
+        </div>
+
+        <h4 style="margin-bottom: 10px;">3. Advanced Poses</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 18 and forloop.counter >= 16 %}
+            <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="afforde">
+            </a>
+              {% endif %}
+            {% endfor %}
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 18 and forloop.counter >= 16 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+               {% endif %}
+            {% endfor %}
+           
+        </div>
+
+        <h3>➤ Meditation Practices</h3>
+        <h4 style="margin-bottom: 10px;">1. Basic Meditation</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 21 and forloop.counter >= 19 %}
+            <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="afforde">
+            </a>
+              {% endif %}
+            {% endfor %}
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 21 and forloop.counter >= 19 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+               {% endif %}
+            {% endfor %}
+           
+        </div>
+
+        <h4 style="margin-bottom: 10px;">2. Intermediate Meditation</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 24 and forloop.counter >= 22 %}
+            <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="afforde">
+            </a>
+              {% endif %}
+            {% endfor %}
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 24 and forloop.counter >= 22 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+               {% endif %}
+            {% endfor %}
+           
+        </div>
+
+        <h4 style="margin-bottom: 10px;">3. Advanced Meditation</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 27 and forloop.counter >= 25 %}
+            <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="afforde">
+            </a>
+              {% endif %}
+            {% endfor %}
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 27 and forloop.counter >= 25 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+               {% endif %}
+            {% endfor %}
+           
+        </div>
+
+        <h3>➤ Relaxation Techniques</h3>
+        <h4 style="margin-bottom: 10px;">1. Basic Relaxation</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 30 and forloop.counter >= 28 %}
+            <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="afforde">
+            </a>
+              {% endif %}
+            {% endfor %}
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 30 and forloop.counter >= 28 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+               {% endif %}
+            {% endfor %}
+           
+        </div>
+
+        <h4 style="margin-bottom: 10px;">2. Intermediate Relaxation</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 33 and forloop.counter >= 31 %}
+            <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="afforde">
+            </a>
+              {% endif %}
+            {% endfor %}
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 33 and forloop.counter >= 31 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+               {% endif %}
+            {% endfor %}
+           
+        </div>
+
+        <h4 style="margin-bottom: 10px;">3. Advanced Relaxation</h4>
+        
+        <div class="image-container">
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 36 and forloop.counter >= 34 %}
+            <a href="{% url 'details' exercise_id=exercise.id %}" class="image-link">
+                <img style="height: 202px;" class="image-style" src="{{ exercise.exerciseimage.url }}" alt="afforde">
+            </a>
+              {% endif %}
+            {% endfor %}
+            {% for exercise in exercises_list %}
+              {% if forloop.counter <= 36 and forloop.counter >= 34 %}
+                <span class="p-image">
+                    <a style="color: #333; text-decoration: none;" href="{% url 'details' exercise_id=exercise.id %}">
+                        {{ exercise.exercisename }}
+                    </a>
+                </span>
+               {% endif %}
+            {% endfor %}
+           
+        </div>
+
+
+        <section id="featured">
+            <h3>➤ What is the Importance of Yoga for Students</h3>
+            <p>
+ 
+     Practicing yoga regularly can help students manage stress from academic pressures, social dynamics, and future uncertainties. Its mindful movements and breathing exercises lower cortisol levels, boosting mood and creating peace and calm. <br> Yoga improves concentration and attention span through mindfulness, helping students absorb information better, stay engaged, and remember more. It also builds discipline and perseverance, key are keys to academic and life success. Thus, adding yoga to a student’s routine is a key strategy for academic excellence and a balanced life.
+ 
+            </p>
+            <h3>➤ 20 benefits of yoga for students</h3>
+            <p>
+ 
+ 1. Enhances Concentration and Focus: Regular yoga practice helps students sharpen their concentration and enhances their ability to focus, essential for achieving academic success. 
+
+ <br>2.Reduces Stress and Anxiety:- Yoga exercises, including deep breathing, relaxation, and meditation, can significantly reduce stress and anxiety levels among students. 
+ <br>3.Improves Physical Health:- Yoga strengthens the body, improves flexibility, and can lead to better overall physical health, reducing absenteeism due to illnesses.
+ <br>4.Increases Energy and Vitality:- It revitalizes the body and increases energy levels, helping students stay more alert and active throughout the day.
+ <br>5.Boosts Memory and Cognitive Functioning:- Yoga can enhance cognitive functions, leading to improvements in memory, comprehension, and the ability to perform complex tasks.
+ <br>6.Promotes Emotional Stability:- By encouraging mindfulness and a focus on the present, yoga helps in managing emotions, fostering resilience, and promoting a positive outlook.
+ <br>7.Enhances Self-Confidence:- Achieving poses and reaching new levels in practice can boost self-confidence, important for students’ self-esteem and academic performance.
+ <br>8.Improves Motivation:- The discipline and dedication required for yoga can translate into other areas of life, including academic studies, by enhancing motivation and commitment.
+ <br>9.Encourages Healthy Sleep Patterns:- Regular yoga practice can assist in establishing healthier sleep patterns, leading to improved rest and recovery.
+ <br>10.Supports Healthy Social Interactions:- Yoga classes provide opportunities for social interaction, teamwork, and developing communication skills in a supportive environment.
+ <br>11.Increases Flexibility and Posture:- Regular practice makes the body more flexible and can improve posture, crucial for students who spend long hours sitting.
+ <br>12.Helps in Weight Management:- Yoga can aid in maintaining a healthy weight by promoting a more active lifestyle and mindfulness in eating habits.
+ <br>13.Reduces Pain and Aches:- The physical exercises involved in yoga can help reduce the incidence of body aches and pains from long periods of study or poor posture.
+ <br>14.Promotes Discipline and Responsibility:- Integrating a yoga routine into daily life can foster a sense of discipline and responsibility toward one’s health and well-being.
+ <br>15.Enhances Creative Thinking:- The mental clarity and relaxation afforded by yoga can unlock creative potentials, fostering innovation and creative problem-solving skills.
+ <br>16.Improves Breathing Patterns:- Yoga introduces students to controlled breathing techniques that improve lung capacity and the efficiency of the respiratory system.
+ <br>17.Fosters Mindfulness and Presence:- Regular practice encourages mindfulness, helping students to stay present and engaged in their academic pursuits.
+ <br>18.Offers Stress Management Techniques:- Yoga provides students with practical tools for managing stress, which can be particularly valuable during exams and deadlines.
+ <br>19.Encourages a Balanced Lifestyle:- The holistic approach of yoga encourages students to seek balance in their academic, personal, and social lives.
+ <br>20.Provides a Non-Competitive Environment:- Yoga offers a unique space where students can grow and learn without the pressure of competition, focusing on personal progress. 
+            </p>
+            
+            
+        </section>
+    </main>
+
+    <footer>
+        <section>&copy; 2024 Yoga and Exercise for Students :- <a href="https://www.linkedin.com/in/siddharth-nama-1bb967256/" style="color: white; text-decoration: none;">Made by Siddharth Nama</a></section>
+    </footer>
+</body>
+</html>

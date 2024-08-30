@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Details</title>
+    <link rel="stylesheet" href="{% static 'exercise/details.css' %}">
+</head>
+<body>
+    {% csrf_token %}
+    <div class="profile-container">
+        <h1 style="text-align: left;"> <a href="/">🏠</a> &emsp;&emsp;&emsp;&emsp; Exercise Details</h1> 
+        <hr>
+        <div class="profile-details">
+        
+            <h2>{{ exercise_details.0.exercises.exercisename }}</h2>
+            <iframe width="560" height="315" src="{{ exercise_details.0.exercisevideo }}" frameborder="0" allowfullscreen></iframe>
+            <h4>Explanation </h4>
+            <p style="margin-bottom: 0px;" >{{ exercise_details.0.exerciseexplanation }}</p>
+            <h4>Steps </h4>
+            <p>{{ exercise_details.0.exercisesteps|linebreaksbr }}</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
