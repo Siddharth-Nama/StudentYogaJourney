@@ -22,15 +22,15 @@ Here are some screenshots showcasing the platform:
 
 1. **Login Page**:
 
-   ![Home Page]()
+   ![Login Page](/home/static/home/ScreenshotsWebsite/login.png)
 
 2. **Home Page**:
 
-   ![Exercise Library](media/exercise_library.png)
+   ![Home Page](/home/static/home/ScreenshotsWebsite/home.png)
 
 3. **Profile Page**:
 
-   ![Profile Page](media/profile_page.png)
+   ![Profile Page](/home/static/home/ScreenshotsWebsite/profile.png)
 
 *Note: Ensure that the images are placed in the `media` directory within your project, and the paths in the markdown correspond to their actual locations.*
 
