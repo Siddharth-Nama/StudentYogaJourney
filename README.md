@@ -110,6 +110,10 @@ I welcome contributions to enhance the Student Yoga Journey platform. To contrib
 
 5. Open a pull request detailing your changes.
 
+## About the Developer
+
+This project was developed by [Siddharth Nama](https://www.linkedin.com/in/siddharth-nama/) as a learning initiative to dive into cross-platform mobile app development.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
