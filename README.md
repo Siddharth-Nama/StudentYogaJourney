@@ -112,7 +112,7 @@ I welcome contributions to enhance the Student Yoga Journey platform. To contrib
 
 ## About the Developer
 
-This project was developed by [Siddharth Nama](https://www.linkedin.com/in/siddharth-nama/) as a learning initiative to dive into cross-platform mobile app development.
+This project was developed by [Siddharth Nama](https://www.linkedin.com/in/siddharth-nama/) as a learning initiative to dive into web development.
 
 ## License
 
